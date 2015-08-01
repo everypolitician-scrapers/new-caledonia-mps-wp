@@ -5,7 +5,6 @@ require 'scraperwiki'
 require 'wikidata/fetcher'
 
 WikiData::Category.new('Catégorie:Membre du Congrès de la Nouvelle-Calédonie', 'fr').wikidata_ids.each do |id|
-  data = WikiData::Fetcher.new(id: id).data or next
-  # puts data
+  data = WikiData::Fetcher.new(id: id).data('fr') or next
   ScraperWiki.save_sqlite([:id], data)
 end
