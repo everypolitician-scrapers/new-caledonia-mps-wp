@@ -7,7 +7,7 @@ source "https://rubygems.org"
 ruby "2.0.0"
 
 gem "scraperwiki", git: "https://github.com/openaustralia/scraperwiki-ruby.git", branch: "morph_defaults"
-gem "wikidata-fetcher", '>=0.2.2', git: "https://github.com/everypolitician/wikidata-fetcher.git"
+gem "wikidata-fetcher", '>=0.3.5', git: "https://github.com/everypolitician/wikidata-fetcher.git"
 gem "pry"
 gem "colorize"
 
