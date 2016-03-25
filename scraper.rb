@@ -1,10 +1,7 @@
 #!/bin/env ruby
 # encoding: utf-8
 
-require 'scraperwiki'
 require 'wikidata/fetcher'
 
-WikiData::Category.new('Catégorie:Membre du Congrès de la Nouvelle-Calédonie', 'fr').wikidata_ids.each do |id|
-  data = WikiData::Fetcher.new(id: id).data('fr') or next
-  ScraperWiki.save_sqlite([:id], data)
-end
+names = WikiData::Category.new('Catégorie:Membre du Congrès de la Nouvelle-Calédonie', 'fr').member_titles
+EveryPolitician::Wikidata.scrape_wikidata(names: { fr: names })
